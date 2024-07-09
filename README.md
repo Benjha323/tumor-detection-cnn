@@ -1,2 +1,100 @@
-# tumor-detection-cnn
-Este repositorio contiene el código para entrenar y evaluar una Red Neuronal Convolucional (CNN) que detecta tumores en imágenes histopatológicas de colon y pulmón. Usando datos de Kaggle, el modelo logra una precisión del 98.93%, destacando el potencial de las CNNs en el diagnóstico temprano de cáncer.
+
+# CNN para la Detección de Tumores en Imágenes Histopatológicas
+
+Este repositorio contiene los códigos y scripts necesarios para entrenar, evaluar y analizar una Red Neuronal Convolucional (CNN) destinada a la detección temprana de tumores en imágenes histopatológicas de colon y pulmón.
+
+## Descripción
+
+La detección temprana de tumores es crucial para mejorar los resultados del tratamiento y reducir la mortalidad. Este proyecto implementa una CNN para clasificar imágenes histopatológicas de tumores, obtenidas de la plataforma Kaggle. El modelo alcanzó una precisión del 98.93% en el conjunto de prueba, destacando su eficacia en la clasificación de estas imágenes.
+
+## Contenidos del Repositorio
+
+- **analyze.py**: Script para evaluar el modelo entrenado y generar reportes de métricas de clasificación.
+- **preprocess.py**: Script para preprocesar las imágenes histopatológicas, redimensionándolas y organizándolas en directorios.
+- **train_cnn.py**: Script para entrenar la CNN utilizando TensorFlow, con optimización y guardado del mejor modelo.
+
+## Estructura de Archivos
+
+```plaintext
+.
+├── analyze.py
+├── preprocess.py
+├── train_cnn.py
+├── processed_images/
+│   ├── colon_aca/
+│   ├── colon_n/
+│   ├── lung_aca/
+│   ├── lung_n/
+│   └── lung_scc/
+└── best_model.keras
+```
+
+## Requisitos
+
+- Python 3.6+
+- TensorFlow 2.0+
+- NumPy
+- Matplotlib
+- scikit-learn
+- Seaborn
+- Pillow
+- tqdm
+
+Puedes instalar los requisitos utilizando pip:
+
+```sh
+pip install tensorflow numpy matplotlib scikit-learn seaborn pillow tqdm
+```
+
+## Uso
+
+### Preprocesamiento de Imágenes
+
+El primer paso es preprocesar las imágenes:
+
+```sh
+python preprocess.py
+```
+
+Este script redimensionará las imágenes a 256x256 píxeles y las organizará en directorios para su posterior uso en el entrenamiento.
+
+### Entrenamiento del Modelo
+
+Para entrenar el modelo, utiliza el siguiente comando:
+
+```sh
+python train_cnn.py
+```
+
+El modelo se entrenará y se guardará el mejor modelo en `best_model.keras`.
+
+### Evaluación del Modelo
+
+Para evaluar el modelo y generar métricas de rendimiento, utiliza el siguiente comando:
+
+```sh
+python analyze.py
+```
+
+Este script cargará el modelo guardado, realizará predicciones en el conjunto de prueba y generará una matriz de confusión y un reporte de clasificación.
+
+## Resultados
+
+El modelo CNN alcanzó una precisión del 98.93% en el conjunto de prueba. A continuación se presenta la matriz de confusión y el reporte de clasificación:
+
+![Matriz de Confusión](confusion_matrix.png)
+
+| Clase      | Precisión | Recall | F1-score |
+|------------|-----------|--------|----------|
+| colon_aca  | 0.99      | 0.99   | 0.99     |
+| colon_n    | 0.99      | 1.00   | 1.00     |
+| lung_aca   | 0.97      | 0.98   | 0.98     |
+| lung_n     | 1.00      | 1.00   | 1.00     |
+| lung_scc   | 0.99      | 0.97   | 0.98     |
+| **Total**  | **0.99**  | **0.99**| **0.99** |
+
+## Referencias
+
+Para más detalles sobre la metodología y resultados obtenidos, consulta el artículo:
+
+Caterinne Avendaño, Álvaro Iriarte, Benjamín Morales. "Detección Temprana de Tumores en Imágenes Histopatológicas Utilizando Redes Neuronales Convolucionales". [Enlace al documento]
