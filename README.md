@@ -74,9 +74,6 @@ El modelo CNN alcanzó una precisión del 98.93% en el conjunto de prueba. A con
 | lung_n     | 1.00      | 1.00   | 1.00     |
 | lung_scc   | 0.99      | 0.97   | 0.98     |
 | **Total**  | **0.99**  | **0.99**| **0.99** |
+## Datos
 
-## Referencias
-
-Para más detalles sobre la metodología y resultados obtenidos, consulta el artículo:
-
-Caterinne Avendaño, Álvaro Iriarte, Benjamín Morales. "Detección Temprana de Tumores en Imágenes Histopatológicas Utilizando Redes Neuronales Convolucionales".
+Los datos utilizados en este proyecto están disponibles en Kaggle: [Lung and Colon Cancer Histopathological Images](https://www.kaggle.com/datasets/andrewmvd/lung-and-colon-cancer-histopathological-images)
