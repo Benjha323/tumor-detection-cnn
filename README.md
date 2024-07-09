@@ -13,22 +13,6 @@ La detección temprana de tumores es crucial para mejorar los resultados del tra
 - **preprocess.py**: Script para preprocesar las imágenes histopatológicas, redimensionándolas y organizándolas en directorios.
 - **train_cnn.py**: Script para entrenar la CNN utilizando TensorFlow, con optimización y guardado del mejor modelo.
 
-## Estructura de Archivos
-
-```plaintext
-.
-├── analyze.py
-├── preprocess.py
-├── train_cnn.py
-├── processed_images/
-│   ├── colon_aca/
-│   ├── colon_n/
-│   ├── lung_aca/
-│   ├── lung_n/
-│   └── lung_scc/
-└── best_model.keras
-```
-
 ## Requisitos
 
 - Python 3.6+
@@ -82,8 +66,6 @@ Este script cargará el modelo guardado, realizará predicciones en el conjunto 
 
 El modelo CNN alcanzó una precisión del 98.93% en el conjunto de prueba. A continuación se presenta la matriz de confusión y el reporte de clasificación:
 
-![Matriz de Confusión](confusion_matrix.png)
-
 | Clase      | Precisión | Recall | F1-score |
 |------------|-----------|--------|----------|
 | colon_aca  | 0.99      | 0.99   | 0.99     |
@@ -97,4 +79,4 @@ El modelo CNN alcanzó una precisión del 98.93% en el conjunto de prueba. A con
 
 Para más detalles sobre la metodología y resultados obtenidos, consulta el artículo:
 
-Caterinne Avendaño, Álvaro Iriarte, Benjamín Morales. "Detección Temprana de Tumores en Imágenes Histopatológicas Utilizando Redes Neuronales Convolucionales". [Enlace al documento]
+Caterinne Avendaño, Álvaro Iriarte, Benjamín Morales. "Detección Temprana de Tumores en Imágenes Histopatológicas Utilizando Redes Neuronales Convolucionales".
